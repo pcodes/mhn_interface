@@ -1,0 +1,5 @@
+[run]
+include = mhn_interface/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
