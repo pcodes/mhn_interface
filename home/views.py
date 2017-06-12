@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Testing testing")
+    context = {}
+
+    return render(request, 'pages/home.html', context)
 
 # Create your views here.
