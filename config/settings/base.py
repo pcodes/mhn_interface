@@ -56,7 +56,8 @@ LOCAL_APPS = [
     # custom users app
     'mhn_interface.users.apps.UsersConfig',
     # Your stuff: custom apps go here
-    'honeypots.apps.HoneypotsConfig'
+    'honeypots.apps.HoneypotsConfig',
+    'home.apps.HomeConfig'
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
