@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1 class="text-center">Attack Stats</h1>
-    <h3 class="text-center">Attacks in the last 24 hours: {{ total_attacks }}</h3>
+
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center">Attack Stats</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-offset-2">
+                <h3 class="text-center text-justify">Total Attacks in the last 24 hours: {{ total_attacks }}</h3>
+            </div>
+        </div>
+    </div>
+
+
+
 {% endblock content %}
