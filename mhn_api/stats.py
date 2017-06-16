@@ -26,4 +26,11 @@ def get_past_time_attacks(time):
 def get_user_attacks(honeypot_id):
     id_param = {'identifier': honeypot_id}
     user_attacks = get_request(id_param)
-    return user_attacks['data']
+    output = reverse_list(user_attacks['data'])
+    return output
+
+def reverse_list(input_list):
+    output = []
+    for x in range(0, len(input_list)):
+        output.append(input_list[len(input_list) - 1 - x])
+    return output
