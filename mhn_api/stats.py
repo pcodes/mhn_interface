@@ -22,3 +22,8 @@ def get_past_time_attacks(time):
     time_frame = {'hours_ago' : str(time)}
     past_attacks = get_request(time_frame)
     return len(past_attacks['data'])
+
+def get_user_attacks(honeypot_id):
+    id_param = {'identifier': honeypot_id}
+    user_attacks = get_request(id_param)
+    return user_attacks['data']
