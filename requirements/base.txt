@@ -48,4 +48,5 @@ redis>=2.10.5
 
 
 
-# Your custom requirements go here
+# ISO Time format processing
+python-dateutil==2.6.0

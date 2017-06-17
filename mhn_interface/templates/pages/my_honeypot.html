@@ -1,10 +1,12 @@
 {% extends "base.html" %}
+{% load honeypot_extras %}
 
 {% block content %}
     <div class="container">
         {% if user.is_authenticated %}
             <div style="max-width: 90.5rem;" class="row">
                 <div class="col-lg-12">
+                    <h1 class="text-center">Attacks on {{ user.name }}'s Honeypot</h1>
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -20,7 +22,7 @@
                             {% for at in attacks %}
                             <tr>
                                 <td>{{ forloop.counter0|add:attacks.start_index }}</td>
-                                <td>{{ at.timestamp }}</td>
+                                <td>{{ at.timestamp|fdate }}</td>
                                 <td>Country is NA</td>
                                 <td>{{ at.source_ip }}</td>
                                 <td>{{ at.destination_port }}</td>
@@ -41,7 +43,7 @@
                         Page {{ attacks.number }} of {{ attacks.paginator.num_pages }}
                     </span>
 
-                    {% if attacks.has_next %}
+                    {% if attacks.has_next %}k
                         <a href="?page={{ attacks.next_page_number }}">Next</a>
                     {% endif %}
                 </span>
