@@ -9,9 +9,11 @@ from django.views.generic.base import RedirectView
 
 
 urlpatterns = [
-    url('^$', home_views.index),
-    url(r'^home/', RedirectView.as_view(url='/', permanent=False), name='index'),
+    #url(r'^$', RedirectView.as_view(url='/home/index', permanent=False]), name='index'),
+    #url(r'^home/', RedirectView.as_view(url='/', permanent=False), name='index'),
+    url(r'^home/', include('home.urls')),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
+    url(r'^$', home_views.index),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
