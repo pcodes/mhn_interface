@@ -1,6 +1,6 @@
 from django import template
 import dateutil.parser
-import mhn_api.stats as stats
+import mhn_api.country_lookup as lookup
 
 register = template.Library()
 
@@ -11,9 +11,9 @@ def fdate(value):
 
 @register.simple_tag
 def get_flag_ip(ip_addr):
-    return stats.get_flag_ip(ip_addr)
+    return lookup.get_flag_ip(ip_addr)
 
 @register.simple_tag
 def get_country_name(ip_addr):
-    return stats.get_country_name(ip_addr)
+    return lookup.get_country_name(ip_addr)
 
