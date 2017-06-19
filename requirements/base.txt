@@ -44,9 +44,8 @@ pytz==2017.2
 django-redis==4.8.0
 redis>=2.10.5
 
-
-
-
-
 # ISO Time format processing
 python-dateutil==2.6.0
+
+SimpleCache==0.1.2
+Werkzeug==0.12.2

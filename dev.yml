@@ -23,7 +23,6 @@ services:
     environment:
       - POSTGRES_USER=mhn_interface
       - USE_DOCKER=yes
-      - MHN_DEV_KEY=1de5c45b67ad436c8dcc539b439c34b2
     volumes:
       - .:/app
     ports:

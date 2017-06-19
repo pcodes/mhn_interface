@@ -1,18 +1,14 @@
 import requests
-import os
-import environ
 from django.conf import settings
 
 
 def get_request(params):
-    env = environ.Env
-
     if settings.DEBUG:
-        api_key = {'api_key': os.environ.get('MHN_DEV_KEY')}
+        api_key = {'api_key': settings.MHN_DEV_KEY}
     else:
-        api_key = {'api_key': env('MHN_API_KEY')}
+        api_key = {'api_key': settings.MHN_API_KEY}
 
-    base_url = 'http://54.162.74.219/api/session'
+    base_url = settings.MHN_URL
     if not params:
         request = api_key
     else:

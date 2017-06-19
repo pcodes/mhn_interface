@@ -271,4 +271,5 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
-MHN_URL = 'http://34.227.205.184/api/session'
+MHN_DEV_KEY = 'd794b4f48a7f4bdfb376f5ad93399b45'
+MHN_URL = 'http://34.207.148.170/api/session'
