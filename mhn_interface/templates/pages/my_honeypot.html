@@ -23,7 +23,7 @@
                             <tr>
                                 <td>{{ forloop.counter0|add:attacks.start_index }}</td>
                                 <td>{{ at.timestamp|fdate }}</td>
-                                <td>Country is NA</td>
+                                <td><img src="{% get_flag_ip at.source_ip %}" width="25" height="25" >{% get_country_name at.source_ip %}</td>
                                 <td>{{ at.source_ip }}</td>
                                 <td>{{ at.destination_port }}</td>
                                 <td>{{ at.protocol }}</td>
@@ -43,7 +43,7 @@
                         Page {{ attacks.number }} of {{ attacks.paginator.num_pages }}
                     </span>
 
-                    {% if attacks.has_next %}k
+                    {% if attacks.has_next %}
                         <a href="?page={{ attacks.next_page_number }}">Next</a>
                     {% endif %}
                 </span>
