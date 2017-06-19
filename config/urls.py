@@ -5,11 +5,12 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from home import views as home_views
-
+from django.views.generic.base import RedirectView
 
 
 urlpatterns = [
     url('^$', home_views.index),
+    url(r'^home/', RedirectView.as_view(url='/', permanent=False), name='index'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
     # Django Admin, use {% url 'admin:index' %}
