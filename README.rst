@@ -1,7 +1,8 @@
 MHN Interface
 =============
 
-Alternative UI
+An alternative UI created for the Modern Honey Network, specifically for a middle-school cyber-security camp. It
+allows for multiple "teams" to each control a honeypot, and receive stats about each device.
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/
@@ -62,7 +63,11 @@ Moved to `Live reloading and SASS compilation`_.
 Deployment
 ----------
 
-The following details how to deploy this application.
+To deploy-
+1. Install docker on target machine
+2. Run `docker-compose -f docker-compose.yml build`
+3. Run 'docker-compose -f docker-compose.yml run'
+
 
 
 
