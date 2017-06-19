@@ -259,7 +259,7 @@ SOCIALACCOUNT_ADAPTER = 'mhn_interface.users.adapters.SocialAccountAdapter'
 # Custom user app defaults
 # Select the correct user model
 AUTH_USER_MODEL = 'users.User'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/home/'
 LOGIN_URL = 'account_login'
 
 # SLUGLIFIER
