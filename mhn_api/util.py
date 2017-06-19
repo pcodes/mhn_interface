@@ -15,7 +15,7 @@ def get_frequency(list, key):
 def get_top_5(list, key):
     total = get_frequency(list, key)
     top_5 = dict(sorted(iter(total.items()), key=operator.itemgetter(1), reverse=True)[:5])
-    print(top_5)
-    print(sorted(top_5, key=top_5.get, reverse=True))
+    #print(top_5)
+    #print(sorted(top_5, key=top_5.get, reverse=True))
     return sorted(top_5, key=top_5.get, reverse=True)
 
