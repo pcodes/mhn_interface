@@ -24,7 +24,7 @@ urlpatterns = [
     # Your stuff: custom urls includes go here
     url(r'^honeypots/', include('honeypots.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
-    url(r'^accounts/login$', 'django.contrib.auth.views.login'),
+    #url(r'^accounts/login$', 'django.contrib.auth.views.login'),
     url(r'^admin/', admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
