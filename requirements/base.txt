@@ -49,3 +49,4 @@ python-dateutil==2.6.0
 
 SimpleCache==0.1.2
 Werkzeug==0.12.2
+django-favicon-plus==0.0.6

@@ -49,6 +49,7 @@ THIRD_PARTY_APPS = [
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
+    'favicon',
 ]
 
 # Apps specific for this project go here.
@@ -259,7 +260,7 @@ SOCIALACCOUNT_ADAPTER = 'mhn_interface.users.adapters.SocialAccountAdapter'
 # Custom user app defaults
 # Select the correct user model
 AUTH_USER_MODEL = 'users.User'
-LOGIN_REDIRECT_URL = '/home/'
+LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'account_login'
 
 # SLUGLIFIER
@@ -273,3 +274,11 @@ ADMIN_URL = r'^admin/'
 # ------------------------------------------------------------------------------
 MHN_DEV_KEY = 'd794b4f48a7f4bdfb376f5ad93399b45'
 MHN_URL = 'http://34.207.148.170/api/session'
+
+FAVICON_CONFIG = {
+    'shortcut icon': [16 ,32 ,48 ,128, 192],
+    'touch-icon': [196],
+    'icon': [196],
+    'apple-touch-icon': [57, 72, 114, 144, 180],
+    'apple-touch-icon-precomposed': [57, 72, 76, 114, 120, 144, 152,180],
+}
