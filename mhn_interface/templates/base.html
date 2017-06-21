@@ -1,18 +1,22 @@
 {% url 'my_honeypot' as my_honeypot %}
 {% url 'home:index'  as home_index %}
 {% url 'team_attacks' as team_attacks %}
+{% url 'team_stats' as team_stats %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css">
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
+<!-- TODO: Add for loop to replace repeated sections -->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -28,15 +32,71 @@
 
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-left">
-                    <li><a href="{{ team_attacks }}/?team=1">Team 1</a></li>
-                    <li><a href="{{ team_attacks }}/?team=2">Team 2</a></li>
-                    <li><a href="{{ team_attacks }}/?team=3">Team 3</a></li>
-                    <li><a href="{{ team_attacks }}/?team=4">Team 4</a></li>
-                    <li><a href="{{ team_attacks }}/?team=5">Team 5</a></li>
-                    <li><a href="{{ team_attacks }}/?team=6">Team 6</a></li>
-                    <li><a href="{{ team_attacks }}/?team=7">Team 7</a></li>
-                    <li><a href="{{ team_attacks }}/?team=8">Team 8</a></li>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown">Team 1 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ team_stats }}/?team=1">Honeypot Overview</a></li>
+                            <li><a href="{{ team_attacks }}/?team=1">Attacks Chart</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown">Team 2 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ team_stats }}/?team=2">Honeypot Overview</a></li>
+                            <li><a href="{{ team_attacks }}/?team=2">Attacks Chart</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown">Team 3 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ team_stats }}/?team=3">Honeypot Overview</a></li>
+                            <li><a href="{{ team_attacks }}/?team=3">Attacks Chart</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown">Team 4 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ team_stats }}/?team=4">Honeypot Overview</a></li>
+                            <li><a href="{{ team_attacks }}/?team=4">Attacks Chart</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown">Team 5 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ team_stats }}/?team=5">Honeypot Overview</a></li>
+                            <li><a href="{{ team_attacks }}/?team=5">Attacks Chart</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown">Team 6 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ team_stats }}/?team=6">Honeypot Overview</a></li>
+                            <li><a href="{{ team_attacks }}/?team=6">Attacks Chart</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown">Team 7 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ team_stats }}/?team=7">Honeypot Overview</a></li>
+                            <li><a href="{{ team_attacks }}/?team=7">Attacks Chart</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown">Team 8 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ team_stats }}/?team=8">Honeypot Overview</a></li>
+                            <li><a href="{{ team_attacks }}/?team=8">Attacks Chart</a></li>
+                        </ul>
+                    </li>
 
                     <!-- TODO: Implement these two items
                     <li><a href="/honeypots/all_honeypots/">All Attacks</a></li>
