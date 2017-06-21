@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load honeypot_extras %}
+
+{% block title %}Team {{ team_num }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div style="max-width: 90.5rem;" class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center">Attacks on Team {{ team }}'s Honeypot</h1>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Date</th>
+                            <th>Country</th>
+                            <th>Src IP</th>
+                            <th>Dst Port</th>
+                            <th>Protocol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for at in attacks %}
+                        <tr>
+                            <td>{{ forloop.counter0|add:attacks.start_index }}</td>
+                            <td>{{ at.timestamp|fdate }}</td>
+                            <td><img src="{% get_flag_ip at.source_ip %}" width="25" height="25" >{% get_country_name at.source_ip %}</td>
+                            <td>{{ at.source_ip }}</td>
+                            <td>{{ at.destination_port }}</td>
+                            <td>{{ at.protocol }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="pagination">
+            <span class="step-links">
+                {% if attacks.has_previous %}
+                    <a href="?team={{ team }}&page={{ attacks.previous_page_number }}">Prev</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ attacks.number }} of {{ attacks.paginator.num_pages }}
+                </span>
+
+                {% if attacks.has_next %}
+                    <a href="?team={{ team }}&page={{ attacks.next_page_number }}">Next</a>
+                {% endif %}
+            </span>
+        </div>
+
+
+
+    </div>
+{% endblock content %}

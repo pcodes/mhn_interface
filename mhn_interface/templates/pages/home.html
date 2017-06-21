@@ -5,37 +5,28 @@
 
 {% block content %}
     <div class="container">
-    {% if user.is_authenticated %}
-        <h1 class="text-center">Attack Stats for {{ user.name }}</h1>
-        <div class="col-lg-offset-2">
-            <h2>Attacks in the last 24 hours: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ total_attacks }}</h2>
+        <h1 class="text-center">Attack Stats for all Honeypots</h1>
+        <h2 class="text-center">Attacks in the last 24 hours: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ total_attacks }}</h2>
+        <div class="row">
+            <div class="col-md-6">
 
-            <h2>Top 5 IPs:</h2>
+            <h2 class="text-center">Top 5 IPs:</h2>
             <div class="text-justify">
                 {% for ip in top_ips %}
-                    <p>{{ forloop.counter }}. <img src="{% get_flag_ip ip %}" height="25" width="25"> {{ ip }}</p>
+                    <p class="text-center">{{ forloop.counter }}. <img src="{% get_flag_ip ip %}" height="25" width="25"> {{ ip }}</p>
                 {% endfor %}
             </div>
-
-            <h2>Top 5 Ports:</h2>
+        </div>
+        <div class="col-md-6">
+            <h2 class="text-center">Top 5 Ports:</h2>
             <div class="text-justify">
                 {% for port in top_ports %}
-                    <p>{{ forloop.counter }}. {{ port }}</p>
+                    <p class="text-center">{{ forloop.counter }}. {{ port }}</p>
                 {% endfor %}
             </div>
         </div>
+        </div>
 
-    {% else %}
-        <div class="row">
-            <h1 class="text-center">Attack Stats</h1>
-        </div>
-        <div class="row">
-            <div class="col-lg-offset-2">
-                <h2>Attacks in the last 24 hours: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ total_attacks }}</h2>
-                <h3>Log in to see your team data!</h3>
-            </div>
-        </div>
-    {% endif %}
     </div> <!-- End container -->
 
 
