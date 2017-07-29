@@ -1,4 +1,4 @@
-#Instructions for Honeypot Redeployment
+# Instructions for Honeypot Redeployment
 Due to the nature of AWS, redeploying the honeypots is relatively
 simple.
 
